@@ -8,3 +8,9 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - 5455:5432
+  musicbrainz:
+    build:
+      context: ./musicbrainz
+    restart: on-failure
+    depends_on:
+      - db
